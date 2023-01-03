@@ -1,0 +1,317 @@
+<html>
+<head>
+	<title>3d Effects</title>
+	
+	<style>
+	.abc {
+	background-color:black;
+	color:white;
+	float:right;
+	list-style:none;
+	width: 200px;
+	height:50px;
+	font-size:20px;
+	text-align:center;
+	opacity:0.8;
+	align:top;
+}
+	.abc ul{
+		padding:0px;
+	}
+ .abc ul li{
+	background-color:black;
+	 color:white;
+	width: 200px;
+	list-style:none;
+	height:50px;
+	line-height:50px;
+	font-size:20px;
+	text-align:center;
+	opacity:0.8;
+	display:none;
+ }
+ 
+ .abc ul li ul{
+	display:none;
+ }
+ .abc li:hover > ul li{
+ display:block;
+ }
+ .abc li:hover{
+	background-color:white;
+	color:black;
+	}
+	.abc li ul li a{
+	text-decoration:none;
+		
+	}
+ 
+	
+		<!--sshow-->
+	body{
+	font-family:algerian;
+	background-color:#ff1493;
+	background-size:cover;
+	background-repeat:no-repeat;
+	height:100vh;
+	overflow:hidden;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	img:url('bg img.jpg');
+	}
+	.all{
+		display:flex;
+		perspective:10px;
+		transform:perspective(300px) rotateX(20deg);
+		will-change:perspective;
+		perspective-origin:center center;
+		transition:all 1.3s ease-out;
+		justify-content:center;
+		transform-style:preserve 3d; 
+		}
+		
+		
+	.all:hover{
+				perspective:1000px;
+				transition:all 1.3s ease-in;
+				transform:perspective(10000px) rotateX(0deg);
+			}
+	.all:hover .text{
+		opacity:1;
+	}
+	.all:hover > div {
+		opacity:1;
+		transition-delay:0s;
+	}
+	.all:hover .explainer{
+	opacity:0;
+	}
+	.left, .center, .right, .lefter, .righter{
+	width:200px;
+	height:150px;
+	transform-style:preserve-3d;
+	border-radius:10px;
+	border:1px solid #fff;
+	box-shadow:0 0 20px 5px rgba(100, 100, 255, 0.4);
+	opacity:0;
+	transition:all 0.3 ease;
+	transition-delay:1s;
+	position:relative;
+	background-position:center center;
+	background-size:contain;
+	background-repeat:no-repeat;
+	
+	cursor:pointer;
+	background-blend-mode:color-burn;
+	}
+	.left:hover, .center:hover, .right:hover, .lefter:hover, .righter:hover{
+	box-shadow:0 0 10px rgba(100 100 255 0.6);
+	
+	}
+	.text{
+	transform:translateY(30px);
+	opacity:0;
+	transition:all .3s ease;
+	bottom:0;
+	left:5px;
+	position:absolute;
+	will-change:transform;
+	color:white;
+	box-shadow:0 0 5px rgba(100 100 255 0.6);
+	}
+	.lefter{
+	transform:translateX(-60px)translateZ(-50px) rotateY(-10deg);
+	background-image:url('1.jpg');
+	}
+	
+	.text a{
+		text-decoration:none;
+		font-color:white;
+	}
+	.left{
+	transform:translateX(-30px)translateZ(-25px) rotateY(-5deg);
+	background-image:url('26.jpg');
+	}
+	.center{
+	opacity:1;
+	background-image:url('234.jpg');
+	}
+	.right{
+	transform:translateX(30px)translateZ(-25px) rotateY(5deg);
+	background-image:url('23.jpg');
+	}
+	.righter{
+	transform:translateX(60px)translateZ(-50px) rotateY(10deg);
+	background-image:url('8.jpg');
+	}
+	.explainer{
+	font-weight:300;
+	font-size:2rem;
+	color:#fff;
+	transition:all .6s ease;
+	width:100%;
+	height:100%;
+	background-color:#303050;
+	background-image:radial-gradient(circle at center top,black,#33a);
+	border-radius:10px;
+	text-shadow:0 0 10px rgba(255,255,255,0.8);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	}
+	a:link{color:green;}
+	a:visited{color:#ff1493;}
+	a{
+		font-family:Britannic Bold;
+		font-size:22px ;
+	}
+	
+	<!--end-->
+	body{
+			margin:0;
+			padding:0;
+		}
+		h1{
+			margin:0;
+			padding:0;
+			position:absolute;
+			left:50%;
+			transform:translate(-50%,-50%);
+		}
+		h1 span{
+		color:black;
+		background:#ff1493;
+		padding:10px 20px;
+		font-family:monotype corsiva;
+		font-weight:100%;
+		display:table-cell;
+		box-shadow: inset 0 0 5px rgba(0,0,0,.3),0 5px 0 white;
+		animation: animate .5s infinite;
+		}
+
+		@keyframes animate
+		{
+		0%
+		{
+		transform:translateY(0px);
+		box-shadow: inset 0 0 5px rgba(0,0,0,.3),0 5px 0 #ccc;
+		}
+
+		50%
+		{
+		transform:translateY(-20px);
+		}
+
+		100%
+		{
+		transform:translateY(0px);
+		}
+		}
+
+		h1 span:nth-child(1)
+		{
+		animation-delay:.2s;
+		}
+
+		h1 span:nth-child(2)
+		{
+		animation-delay:.4s;
+		}
+
+		h1 span:nth-child(3)
+		{
+		animation-delay:.6s;
+		}
+
+		h1 span:nth-child(4)
+		{
+		animation-delay:.8s;
+		}
+
+		h1 span:nth-child(5)
+		{
+		animation-delay:1s;
+		}
+
+		h1 span:nth-child(6)
+		{
+		animation-delay:1.2s;
+		}
+
+		h1 span:nth-child(7)
+		{
+		animation-delay:1.4s;
+		}
+		h1 span:nth-child(8)
+		{
+		animation-delay:1.6s;
+		}
+		h1 span:nth-child(9)
+		{
+		animation-delay:1.8s;
+		}
+		h1 span:nth-child(10)
+		{
+		animation-delay:2.0s;
+		}
+		h1 span:nth-child(11)
+		{
+		animation-delay:2.2s;
+		}
+		h1 span:nth-child(12)
+		{
+		animation-delay:2.4s;
+		}
+
+	</style>
+</head>
+<body background="bg img.jpg">
+</br></br><br/>
+<div class="abc">
+<li>Bikes
+		<ul>
+		<li><a href="hero splender.html">Hero Splender</a></li>
+		<li><a href="yamaha.html">Yamaha</a></li>
+		<li><a href="suzuki.html">Suzuki</a></li>
+		<li><a href="activa.html">Activa</a></li>
+		<li><a href="yamaha gallery.html">Gallery</a></li>
+		</ul>
+</li>
+</div>
+<h1>
+	<span>B</span>
+	<span>A</span>
+	<span>J</span>
+	<span>A</span>
+	<span>J</span>
+	<span>B</span>
+	<span>I</span>
+	<span>K</span>
+	<span>E</span>
+	<span>S</span>
+	
+</h1>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	
+	<div class="all">
+		<div class="lefter">
+			<div class="text"align="center"><a href="Royal Enfield Classic.html">Royal Enfield Classic</a></div>
+			
+		</div>
+		<div class="left">
+			<div class="text"align="center"><a href="fascino1.html">Fascino</a></div>
+		</div>
+		<div class="center">
+			<div class="explainer"align="center"><span>Two Wheeler Show-room</span></div>
+			<div class="text"align="center"><a href="gallery.html">Gallery</a></div>
+		</div>
+		<div class="right">
+			<div class="text"align="center"><a href="dio.html">Dio</a></div>
+		</div>
+		<div class="righter">
+			<div class="text"align="center"><a href="bajaj pulsar.html">Bajaj Pulsar</a></div>
+		</div>	
+	</div>
+	
+</html>
